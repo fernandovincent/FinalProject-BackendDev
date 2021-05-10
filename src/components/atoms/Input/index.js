@@ -1,8 +1,9 @@
 import React from "react";
+import App from '../../../App.css';
 
 const Input = ({ placeholder, ...rest }) => {
   return (
-    <div>
+    <div className="input">
       <input placeholder={placeholder} {...rest} />
     </div>
   );

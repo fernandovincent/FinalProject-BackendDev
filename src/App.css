@@ -3,6 +3,33 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Navbar */
+.navbar-brand {
+  font-size: 26px;
+  font-family: "Montserrat";
+  font-weight: 700;
+}
+/* Akhir Navbar */
+
+.dashpic {
+  height: 500px;
+  width: 500px;
+}
+
 .btn {
   border-radius: 50px;
+}
+
+.reg {
+  float: left;
+  width: 500px;
+}
+
+.pic {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  padding-left: 500px;
+  margin-top: 10px;
+  padding-top: 50px;
 }

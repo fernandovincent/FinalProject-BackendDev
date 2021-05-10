@@ -4,6 +4,8 @@ import Button from "../../atoms/Button";
 import Input from "../../atoms/Input";
 import firebase from '../../../config/Firebase';
 import { useHistory } from 'react-router-dom';
+import App from '../../../App.css';
+import RegisterPic from '../../../assets/image/register.png';
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -43,6 +45,7 @@ const Register = () => {
   return (
     <div className="container">
       <NavBar />
+      <div className="reg">
       <p className="form-label mt-4">Full Name</p>
       <Input
         className="form-control"
@@ -68,6 +71,10 @@ const Register = () => {
       <br />
       <br />
       <Button onClick={onSubmit} text="Register New User"/>
+      </div>
+      <div className="pic">
+      <img src={RegisterPic} />
+      </div>
       </div>
   );
 };
