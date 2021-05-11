@@ -8,6 +8,8 @@ const Main = () => {
   const [time, setTime] = useState("");
   const [description, setDescription] = useState("");
   const [toDoList, settoDoList] = useState([]);
+  const [button, setButton] = useState("Save");
+  const [selectedProduct, setSelectedProduct] = useState({});
 
   useEffect(() => {
     firebase.database().ref("products").on("value", (res) => {
@@ -31,6 +33,7 @@ const Main = () => {
     settoDo("");
     setTime("");
     setDescription("");
+    setButton("Save");
   };
 
   const onSubmit = () => {
@@ -39,8 +42,27 @@ const Main = () => {
       time: time,
       description: description,
     };
-      firebase.database().ref("products").push(data);
-      resetForm();
+    if(button === "Save"){
+      // Insert
+      firebase.database().ref("products").push(data);      
+    }else {
+      // Update
+      firebase.database().ref(`products/${selectedProduct.id}`).set(data);
+    }
+    resetForm();
+  };
+
+  const onUpdateData = (item) => {
+    settoDo(item.toDo);
+    setTime(item.time);
+    setDescription(item.description);
+    setButton("Update");
+    setSelectedProduct(item);
+  };
+
+  const onDeleteData = (item) => {
+    // Detele
+    firebase.database().ref(`products/${item.id}`).remove();
   };
   
   return (
@@ -55,7 +77,11 @@ const Main = () => {
         <p>Description</p>
         <input className="form-control" placeholder="Type your price" value={description} onChange={(e) => setDescription(e.target.value)} />
         <br />
-        <button className="btn btn-primary" onClick={onSubmit}>Save</button>  
+        <button className="btn btn-primary" onClick={onSubmit}>{button}</button>  
+        {
+          button === "Update" && (
+            <button className="btn btn-secondary" onClick={resetForm}>Cancel Update</button>  
+        )}
       </div>
       <hr />
       <table class="table table-striped table-hover">
@@ -67,6 +93,19 @@ const Main = () => {
             <th>Action</th>
           </tr>
         </thead>
+        <tbody>
+          {toDoList.map((item) => (
+            <tr key={item.id}>
+              <td>{item.toDo}</td>
+              <td>{item.time}</td>
+              <td>{item.description}</td>
+              <td>
+                <button className="btn btn-success" onClick={() => onUpdateData(item)}>Update</button>
+                <button className="btn btn-danger" onClick={() => onDeleteData(item)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );

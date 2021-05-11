@@ -3,7 +3,7 @@ import NavBar from "../../molecules/NavBar";
 import Button from "../../atoms/Button";
 import Input from "../../atoms/Input";
 import firebase from "../../../config/Firebase";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 
 const Login = () => {
   const [welcomeText, setWelcomeText] = useState("Hello, Welcome!");
@@ -63,6 +63,12 @@ const Login = () => {
       <br />
       <br />
       <Button onClick={handleSubmit} text="Submit"/>
+      <div className="mt-3 text-align-center">
+      Don't have a account ? 
+      <NavLink activeClassName="active" to="/register" >
+        Click Here
+      </NavLink>
+      </div>
     </div>
   );
 };
