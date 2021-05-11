@@ -7,6 +7,7 @@ const Main = () => {
   const [toDo, settoDo] = useState("");
   const [time, setTime] = useState("");
   const [description, setDescription] = useState("");
+  const [toDoList, settoDoList] = useState([]);
 
   useEffect(() => {
     firebase.database().ref("products").on("value", (res) => {
@@ -47,7 +48,7 @@ const Main = () => {
         <p>Description</p>
         <input className="form-control" placeholder="Type your price" value={description} onChange={(e) => setDescription(e.target.value)} />
         <br />
-        <button className="btn btn-primary" onClick={onSubmit}>{button}</button>  
+        <button className="btn btn-primary" onClick={onSubmit}>Save</button>  
       </div>
       <hr />
       <table class="table table-striped table-hover">
