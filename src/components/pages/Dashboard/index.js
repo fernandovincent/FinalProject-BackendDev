@@ -18,8 +18,8 @@ const Dashboard = () => {
         <div className="row custom-section d-flex align-items-center">
           <div className="col-12 col-lg-4">
             <h3 className="textheader">Simple</h3>
-            <h2 className="textheader2">Add Contact</h2>
-            <p className="text">Make it easier and get more close with other</p>
+            <h2 className="textheader2">To Do List</h2>
+            <p className="text">Make it easier and get tracked with your activity</p>
             <Button text="Get Started" onClick={handleHistory} />
           </div>
           <div className="col-12 col-lg-8">
