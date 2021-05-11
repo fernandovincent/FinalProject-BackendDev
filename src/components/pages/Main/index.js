@@ -73,11 +73,11 @@ const Main = () => {
       <h3 className="mt-2">To Do App</h3>
       <div className="col-12 mt-4">
         <p>To Do</p>
-        <input className="form-control" placeholder="Type your product name" value={toDo} onChange={(e) => settoDo(e.target.value)}  />
+        <input className="form-control" placeholder="Type your to do activity" value={toDo} onChange={(e) => settoDo(e.target.value)}  />
         <p>Time</p>
-        <input className="form-control" placeholder="Type the category" value={time} onChange={(e) => setTime(e.target.value)} />
+        <input className="form-control" placeholder="Type the time of activity" value={time} onChange={(e) => setTime(e.target.value)} />
         <p>Description</p>
-        <input className="form-control" placeholder="Type your price" value={description} onChange={(e) => setDescription(e.target.value)} />
+        <input className="form-control" placeholder="Type your description" value={description} onChange={(e) => setDescription(e.target.value)} />
         <br />
         <button className="btn btnmain btn-primary" onClick={onSubmit}>{button}</button>  
         {
