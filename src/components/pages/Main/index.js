@@ -27,6 +27,12 @@ const Main = () => {
     });
   }, []);
 
+  const resetForm = () => {
+    settoDo("");
+    setTime("");
+    setDescription("");
+  };
+
   const onSubmit = () => {
     const data = {
       toDo: toDo,
@@ -34,6 +40,7 @@ const Main = () => {
       description: description,
     };
       firebase.database().ref("products").push(data);
+      resetForm();
   };
   
   return (
