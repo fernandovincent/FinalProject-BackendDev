@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import firebase from '../../../config/Firebase';
 import Navbar from '../../molecules/NavBar';
-
+import App from '../../../App.css';
+import Footer from '../../molecules/Footer';
 const Main = () => {
 
   const [toDo, settoDo] = useState("");
@@ -67,17 +68,18 @@ const Main = () => {
   
   return (
     <div className="container">
+      <>
       <Navbar />
-      <h3>Dashboard</h3>
-      <div className="col-6">
-        <p>To DO</p>
+      <h3 className="mt-2">To Do App</h3>
+      <div className="col-12 mt-4">
+        <p>To Do</p>
         <input className="form-control" placeholder="Type your product name" value={toDo} onChange={(e) => settoDo(e.target.value)}  />
         <p>Time</p>
         <input className="form-control" placeholder="Type the category" value={time} onChange={(e) => setTime(e.target.value)} />
         <p>Description</p>
         <input className="form-control" placeholder="Type your price" value={description} onChange={(e) => setDescription(e.target.value)} />
         <br />
-        <button className="btn btn-primary" onClick={onSubmit}>{button}</button>  
+        <button className="btn btnmain btn-primary" onClick={onSubmit}>{button}</button>  
         {
           button === "Update" && (
             <button className="btn btn-secondary" onClick={resetForm}>Cancel Update</button>  
@@ -107,7 +109,10 @@ const Main = () => {
           ))}
         </tbody>
       </table>
+      </>
+      <Footer />
     </div>
+
   );
 };
 

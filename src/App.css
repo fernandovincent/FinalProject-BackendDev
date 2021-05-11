@@ -102,3 +102,18 @@ body {
   display: flex;
   padding-top: 20px;
 }
+
+.btnmain {
+  justify-content: center;
+  align-items: center;
+  margin-left: 580px;
+}
+
+.main-footer {
+  color: white;
+  padding-top: 1em;
+  background-color: gray;
+  position: absolute;
+  bottom: 0;
+  width: 1300px;
+}
