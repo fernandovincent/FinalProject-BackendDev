@@ -10,7 +10,7 @@ const Navbar = () => {
       <div class="head my-3">
       <nav className="navbar navbar-expand-lg navbar-light">
         <a className="navbar-brand d-flex align-items-center">
-          <span>Contact App</span>
+          <span>To Do List App</span>
         </a>
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <div className="navbar-nav">
