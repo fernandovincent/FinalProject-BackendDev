@@ -93,13 +93,12 @@ body {
 .reg {
   float: left;
   width: 500px;
+  margin-top: 50px;
 }
 
 .pic {
-  height: 500px;
-  width: 500px;
+  height: 600px;
+  width: 600px;
   display: flex;
-  padding-left: 500px;
-  margin-top: 10px;
-  padding-top: 50px;
+  padding-top: 20px;
 }
