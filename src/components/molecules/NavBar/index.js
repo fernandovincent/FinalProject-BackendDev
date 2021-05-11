@@ -9,29 +9,29 @@ const Navbar = () => {
     <div className="container">
       <div class="head my-3">
       <nav className="navbar navbar-expand-lg navbar-light">
-        <a className="navbar-brand d-flex align-items-center" href="#">
+        <a className="navbar-brand d-flex align-items-center">
           <span>Contact App</span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <div className="navbar-nav">
-            <Link className="nav-link" to="/">
+            <a className="link1">
+            <Link className="nav-link1" to="/">
               Dashboard
             </Link>
-            <Link className="nav-link" to="/login">
+            </a>
+            <Link className="nav-link2" to="/login">
               Login
             </Link>
-            <Link className="nav-link" to="/register">
+            <Link className="nav-link3" to="/register">
               Register
             </Link>
-            <Link className="nav-link" to="/main">
+            {/* <Link className="nav-link4" to="/main">
               Main
-            </Link>
-            <Link className="nav-link" to="/about">
+            </Link> */}
+            <Link className="nav-link4" to="/about">
               About
             </Link>
+            <div className="animation start-home"></div>
           </div>
         </div>
     </nav>

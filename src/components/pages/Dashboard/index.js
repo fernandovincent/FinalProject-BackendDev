@@ -17,13 +17,13 @@ const Dashboard = () => {
         <Navbar/>
         <div className="row custom-section d-flex align-items-center">
           <div className="col-12 col-lg-4">
-            <h3>Simple</h3>
-            <h2>Add Contact</h2>
+            <h3 className="textheader">Simple</h3>
+            <h2 className="textheader2">Add Contact</h2>
             <p className="text">Make it easier and get more close with other</p>
             <Button text="Get Started" onClick={handleHistory} />
           </div>
           <div className="col-12 col-lg-8">
-            <img className="" src={Main} ></img>
+            <img className="dashboardpic" src={Main} ></img>
           </div>
         </div>
       </div>
